@@ -1,36 +1,33 @@
 package com.saji.stocks.selenium;
 
-import org.openqa.selenium.By;
+import com.saji.stocks.pojo.selenium.Action;
+import com.saji.stocks.pojo.selenium.ActionType;
+import com.saji.stocks.pojo.selenium.ParameterType;
+import com.saji.stocks.pojo.selenium.Step;
+import com.saji.stocks.selenium.config.SeleniumConfig;
+import com.saji.stocks.selenium.method.Task;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.io.File;
-import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class App {
-    public static void main(String[] args){
-        System.setProperty("webdriver.http.factory", "jdk-http-client");
-        System.setProperty("webdriver.chrome.driver", File.separator+"Users"+File.separator+"sajethperli"+File.separator+"Downloads"+File.separator+"softwares"+File.separator+"chromedriver");
-        WebDriver driver = new ChromeDriver();
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(SeleniumConfig.class);
+        WebDriver driver = context.getBean("driver",WebDriver.class);
+        List<Step> steps = new ArrayList<>();
+        steps.add(new Step(ActionType.input, "APjFqb", ParameterType.id, "test"));
+        //       steps.add(new Step(ActionType.input, "password", ParameterType.id, "123"));
+//        steps.add(new Step(ActionType.submit, "password", ParameterType.id, ""));
+//        steps.add(new Step(ActionType.wait, "INPUT", ParameterType.tag, 10L));
+//        steps.add(new Step(ActionType.submit, "INPUT", ParameterType.tag, ""));
+        Action action = new Action("Kite", "https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwicqdH3mpeAAxWXlIkEHTV0COAQPAgI", steps);
+        Task task = new Task(driver, action);
+        task.execute();
+        context.close();
 
-        driver.manage().window().maximize();
-
-//Deleting all the cookies
-        driver.manage().deleteAllCookies();
-
-//Specifiying pageLoadTimeout and Implicit wait
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40L));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30L));
-
-//launching the specified URL
-        driver.get("https://www.google.com/");
-
-//Locating the elements using name locator for the text box
-        driver.findElement(By.name("q")).sendKeys("YouTube");
-
-//name locator for google search button
-        WebElement searchIcon = driver.findElement(By.name("btnK"));
-        searchIcon.click();
     }
 }

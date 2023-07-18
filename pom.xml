@@ -13,95 +13,69 @@
         <version>0.0.1</version>
     </parent>
     <dependencies>
+        <!--        <dependency>-->
+        <!--            <groupId>org.seleniumhq.selenium</groupId>-->
+        <!--            <artifactId>selenium-http-jdk-client</artifactId>-->
+        <!--            <version>${selenium.version}</version>-->
+        <!--            <exclusions>-->
+        <!--                <exclusion>-->
+        <!--                    <groupId>com.google.guava</groupId>-->
+        <!--                    <artifactId>guava</artifactId>-->
+        <!--                </exclusion>-->
+        <!--            </exclusions>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>32.1.0-jre</version>
+        </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>com.google.guava</groupId>-->
-<!--                    <artifactId>guava</artifactId>-->
-<!--                </exclusion>-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.netty</groupId>-->
-<!--                    <artifactId>netty-buffer</artifactId>-->
-<!--                </exclusion>-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.netty</groupId>-->
-<!--                    <artifactId>netty-codec-http</artifactId>-->
-<!--                </exclusion>-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.netty</groupId>-->
-<!--                    <artifactId>netty-codec</artifactId>-->
-<!--                </exclusion>-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.netty</groupId>-->
-<!--                    <artifactId>netty-common</artifactId>-->
-<!--                </exclusion>-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.netty</groupId>-->
-<!--                    <artifactId>netty-handler</artifactId>-->
-<!--                </exclusion>-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.netty</groupId>-->
-<!--                    <artifactId>netty-transport</artifactId>-->
-<!--                </exclusion>-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.netty</groupId>-->
-<!--                    <artifactId>netty-transport-native-unix-common</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-http-jdk-client</artifactId>
+            <artifactId>selenium-support</artifactId>
             <version>${selenium.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.saji.stocks.commons</groupId>-->
-<!--            <artifactId>stocks-commons</artifactId>-->
-<!--            <version>${stocks.commons.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.google.guava</groupId>-->
-<!--            <artifactId>guava</artifactId>-->
-<!--            <version>32.0.1-jre</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.netty</groupId>-->
-<!--            <artifactId>netty-buffer</artifactId>-->
-<!--            <version>4.1.93.Final</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.netty</groupId>-->
-<!--            <artifactId>netty-codec-http</artifactId>-->
-<!--            <version>4.1.93.Final</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.netty</groupId>-->
-<!--            <artifactId>netty-codec</artifactId>-->
-<!--            <version>4.1.93.Final</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.netty</groupId>-->
-<!--            <artifactId>netty-common</artifactId>-->
-<!--            <version>4.1.93.Final</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.netty</groupId>-->
-<!--            <artifactId>netty-handler</artifactId>-->
-<!--            <version>4.1.93.Final</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.netty</groupId>-->
-<!--            <artifactId>netty-transport</artifactId>-->
-<!--            <version>4.1.93.Final</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.netty</groupId>-->
-<!--            <artifactId>netty-transport-native-unix-common</artifactId>-->
-<!--            <version>4.1.93.Final</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.saji.stocks.commons</groupId>
+            <artifactId>stocks-commons</artifactId>
+            <version>${stocks.commons.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
