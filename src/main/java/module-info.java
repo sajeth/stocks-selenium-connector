@@ -7,8 +7,7 @@ module stocks.selenium.connector {
     requires spring.core;
     requires com.google.common;
     requires org.seleniumhq.selenium.support;
-//    requires com.google.auto.service;
-//    requires javax;
+requires org.slf4j;
     exports com.saji.stocks.selenium.config to spring.context, spring.beans;
     opens com.saji.stocks.selenium.config to spring.core;
 }
